@@ -1,0 +1,11 @@
+Package: com.codeymoore.satellatvos
+Name: Satella for tvOS
+Depends: mobilesubstrate
+Version: 1.0
+Architecture: appletvos-arm64
+Description: Free iAP for tvOS
+Maintainer: Codey Moore
+Author: Codey Moore
+Section: Tweaks
+Depiction: https://codeymoore.github.io/tvrepo/depictions/SatellatvOS/SatellatvOS.json
+Icon: https://codeymoore.github.io/tvrepo/depictions/SatellatvOS/images/icon.png
