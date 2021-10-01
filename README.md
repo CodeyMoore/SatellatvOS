@@ -4,4 +4,4 @@
 
 Tested on tvOS 14.6 but theoretically should work on tvOS 13.X.X
 
-Direct download here or add my tvOS [Repo](https://codeymoore.github.io/tvrepo/)
+Direct download [here](https://github.com/CodeyMoore/SatellatvOS/releases/) or add my tvOS [Repo](https://codeymoore.github.io/tvrepo/)
