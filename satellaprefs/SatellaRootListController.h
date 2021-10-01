@@ -2,6 +2,7 @@
 
 // statically call the item
 TSKSettingItem *kEnabled;
+TSKSettingItem *kUnrestict;
 
 // Respring Button
 TSKSettingItem *kRespringButton;

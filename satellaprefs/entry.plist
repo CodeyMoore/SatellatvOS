@@ -15,9 +15,10 @@
 		<key>isController</key>
 		<integer>1</integer>
 		<key>label</key>
-		<string>Satella for tvOS</string>
+		<string>SatellatvOS</string>
 		<key>description</key>
-		<string>Satella by Paisseon, ported to tvOS (SatellaTVOS) by CodeyMooreDev.</string>
+		<string>Satella by Paisseon.
+Ported to tvOS (SatellaTVOS) by CodeyMooreDev.</string>
 	</dict>
 </dict>
 </plist>

@@ -1,6 +1,5 @@
 #import "SatellaRootListController.h"
 
-
 // All preferences on tvOS are added in programatically in groups.
 
 @implementation SatellaRootListController
@@ -19,16 +18,16 @@ inline NSString *GetPrefVal(NSString *key){
     NSMutableArray *_backingArray = [NSMutableArray new];
     
     // to add more settings add them like so...
-    kEnabled = [TSKSettingItem toggleItemWithTitle:@"Enable" description:@"Enables free in-app purchases (Will not work for online games. Only works for offline games)." representedObject:facade keyPath:@"kEnabled" onTitle:@"Enabled" offTitle:@"Disabled"];
-    
+    kEnabled = [TSKSettingItem toggleItemWithTitle:@"iAP Hacker" description:@"Enables free in-app purchases.\n\nThis will not work for online games.\nOnly works for offline games." representedObject:facade keyPath:@"kEnabled" onTitle:@"Enabled" offTitle:@"Disabled"];
+    kUnrestict = [TSKSettingItem toggleItemWithTitle:@"iAP Unrestictor" description:@"For people that may have their purchases resticted\nenabling this should unrestict in-app purchases." representedObject:facade keyPath:@"kUnrestict" onTitle:@"Purchases Unresticted" offTitle:@"Purchases Resticted"];
+
     
     // Respring Button here baby!
-    kRespringButton = [TSKSettingItem actionItemWithTitle:@"Respring" description:@"Apply changes by respring. Insures everything works" representedObject:facade keyPath:PLIST_PATH target:self action:@selector(respring)];
+    kRespringButton = [TSKSettingItem actionItemWithTitle:@"Respring" description:@"Apply changes by respringing.\nThis insures everything works correctly." representedObject:facade keyPath:PLIST_PATH target:self action:@selector(respring)];
     
     
     // you add your settings to a group basically an NSArray so the Settings app can see them.
-    TSKSettingGroup *group = [TSKSettingGroup groupWithTitle:@"Enable Tweak" settingItems:@[kEnabled]];
-    
+    TSKSettingGroup *group = [TSKSettingGroup groupWithTitle:@"Tweak Settings" settingItems:@[kEnabled, kUnrestict]];
     
     TSKSettingGroup *group2 = [TSKSettingGroup groupWithTitle:@"Apply Changes" settingItems:@[kRespringButton]];
     

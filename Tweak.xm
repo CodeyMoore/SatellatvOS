@@ -3,10 +3,10 @@
 
 // Settings toggles
 BOOL kEnabled;
+BOOL kUnrestict;
 
 // plist where user settings are stored.
 #define PLIST_PATH @"/var/mobile/Library/Preferences/com.codeymoore.satellatvos.plist"
-
 
 %hook SKPaymentTransaction
 - (long long) transactionState { 
@@ -16,9 +16,7 @@ BOOL kEnabled;
 	%orig;
 	}
 }
-%end
 
-%hook SKPaymentTransaction
 - (void) _setTransactionState: (long long) arg1 {
 	if (kEnabled) {
 		arg1 = TRUE;
@@ -26,6 +24,26 @@ BOOL kEnabled;
 	%orig;
 	}
 
+}
+%end
+
+%hook SKPaymentQueue
++ (bool) canMakePayments {
+	if (kUnrestict) { // allow restricted users to fake purchase
+		return TRUE;
+	} else {
+	%orig;
+	}
+}
+%end
+
+%hook SKReceiptRefreshRequest
+- (bool) _wantsRevoked {
+	return false; // make the receipt not revoked
+}
+
+- (bool) _wantsExpired {
+	return false; // make the receipt not expired
 }
 %end
 
